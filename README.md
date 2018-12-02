@@ -1,7 +1,7 @@
-# Docker Compose with Spring Boot, Spring Data MongoDB
+# Docker Compose with Spring Boot, Spring Data Redis
 
 ## What you'll build
-- A simple Spring Boot application with Spring Data MongoDB running inside Docker containers 
+- A simple Spring Boot application with Spring Data Redis running inside Docker containers 
 
 ## What you'll need
 - Docker CE
@@ -10,7 +10,7 @@
 - Docker
 - Java
 - Spring Boot
-- Spring Data MongoDB
+- Spring Data Redis
 - Maven
 
 ## Run
