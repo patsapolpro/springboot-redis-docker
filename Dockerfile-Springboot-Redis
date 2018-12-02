@@ -1,0 +1,6 @@
+FROM alpine-jdk:base
+MAINTAINER volkswagen
+COPY target/springboot-redis-0.0.1-SNAPSHOT.jar /opt/lib/
+COPY shell/Springboot-Redis-entrypoint.sh /opt/bin/Springboot-Redis-entrypoint.sh
+RUN chmod 755 /opt/bin/Springboot-Redis-entrypoint.sh
+EXPOSE 9000

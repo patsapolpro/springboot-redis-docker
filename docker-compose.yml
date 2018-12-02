@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  myredis:
+    container_name: redis
+    build: ./docker/images/redis
+    image: redis:latest
+    hostname: redis
+    ports:
+      - 6379:6379
+  springboot-redis:
+    build:
+      context: .
+      dockerfile: Dockerfile-Springboot-Redis
+    entrypoint: /opt/bin/Springboot-Redis-entrypoint.sh
+    image: springboot-redis:latest
+    environment:
+      - REDIS_URL=myredis
+      - REDIS_STATUS_HOST=myredis
+      - REDIS_STATUS_PORT=6379
+      - SERVER_PORT=9000
+    ports:
+      - 9000:9000
+    command: mvn clean spring-boot:run
+    links:
+      - myredis:myredis
+    depends_on:
+      - myredis
+
+      
